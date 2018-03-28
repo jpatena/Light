@@ -9,28 +9,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var lightOn = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
-    }
-
-    @IBAction func buttonPressed(_ sender: Any) {
-        lightOn = !lightOn
-        updateUI()
+        offState()
     }
     
-    @IBOutlet weak var lightButton: UIButton!
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBAction func switchToggled(_ sender: UISwitch) {
+        updateUI(sender: sender)
+    }
     
-    func updateUI() {
-        if lightOn {
-            view.backgroundColor = .white
-            lightButton.setTitle("Off", for: .normal)
+    func updateUI(sender: UISwitch) {
+        if sender.isOn {
+            onState()
         }
         else {
-            view.backgroundColor = .black
-            lightButton.setTitle("On", for: .normal)
+            offState()
         }
+    }
+    
+    func onState() {
+        view.backgroundColor = .white
+        switchLabel.text = "On"
+        switchLabel.textColor = .black
+    }
+    
+    func offState() {
+        view.backgroundColor = .black
+        switchLabel.text = "Off"
+        switchLabel.textColor = .white
     }
     
     override func didReceiveMemoryWarning() {

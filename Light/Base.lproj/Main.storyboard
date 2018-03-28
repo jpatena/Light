@@ -18,23 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Loq-Mk-WgS">
-                                <rect key="frame" x="164" y="328.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dT0-aq-sjo"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zMD-7m-wbc">
+                                <rect key="frame" x="138" y="328" width="99" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3q-qC-4lY">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-sR-4hR" userLabel="Light Switch">
+                                        <rect key="frame" x="50" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="xKS-gw-pxO"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Loq-Mk-WgS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YPo-1h-ecR"/>
-                            <constraint firstItem="Loq-Mk-WgS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dZt-Mh-bbg"/>
+                            <constraint firstItem="zMD-7m-wbc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2v3-Ty-tZI"/>
+                            <constraint firstItem="zMD-7m-wbc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JZB-mr-fFW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="lightButton" destination="Loq-Mk-WgS" id="fl7-Ow-to0"/>
+                        <outlet property="switchLabel" destination="T3q-qC-4lY" id="CvA-0k-C2U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
